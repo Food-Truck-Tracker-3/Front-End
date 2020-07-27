@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
+import Register from './components/Register'
+
+
+
 
 function App() {
+
+ 
+
   return (
-    <div className="App">
-      <h1>React App</h1>
-    </div>
+    <div>
+<Register/> 
+  </div>
+
+    
   );
 };
 
