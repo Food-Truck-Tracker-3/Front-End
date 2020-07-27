@@ -6,14 +6,19 @@ export default function Search() {
   const [search, setSearch] = useState("")
   const [trucks, setTrucks] = useState([])
   const [filteredTrucks, setFilteredTrucks] = useState([])
-  const [save, setSave] = useState([])
-  const [savedTruck, setSavedTruck]
+  const [favoriteTrucks, setFavoriteTrucks] = useState([])
+  const [savedTruck, setSavedTruck] = useState("")
 
 const addTruck = event => {
-  event.preventDefault():
-  setSavedTruck([
-    ...
-  ])
+  event.preventDefault();
+  setFavoriteTrucks([
+    ...favoriteTrucks,
+    {
+      id: favoriteTrucks.length,
+      name: savedTruck
+    }
+  ]);
+  setSavedTruck("")
 }
 
 
@@ -26,7 +31,7 @@ const addTruck = event => {
         debugger
       })
   }, [])
-  console.log(trucks.data)//needs to target correct data
+  // console.log(trucks.data)//needs to target correct data
 
   useEffect(() => {
     setFilteredTrucks(
@@ -38,9 +43,10 @@ const addTruck = event => {
 
   return (
     <div>
+      {console.log(favoriteTrucks)}
       <input type="text" placeholder="Search" onChange={e => setSearch(e.target.value)} />
       {filteredTrucks.map((truck, index) => {
-        return (<Truck key={index} details={truck} />
+        return (<Truck key={index} details={truck} saved={addTruck} />
         )
         
       })
