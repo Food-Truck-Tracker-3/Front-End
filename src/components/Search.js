@@ -2,17 +2,20 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Truck from './Truck'
 
-const initialFormValues = {
-  name: "",
-  status: "",
-  gender: "",
-}
-
-export default function Diner() {
-  const [eater, setEater] = useState(initialFormValues)
+export default function Search() {
   const [search, setSearch] = useState("")
   const [trucks, setTrucks] = useState([])
   const [filteredTrucks, setFilteredTrucks] = useState([])
+  const [save, setSave] = useState([])
+  const [savedTruck, setSavedTruck]
+
+const addTruck = event => {
+  event.preventDefault():
+  setSavedTruck([
+    ...
+  ])
+}
+
 
   useEffect(() => {
     axios.get('https://rickandmortyapi.com/api/character/')
@@ -23,7 +26,8 @@ export default function Diner() {
         debugger
       })
   }, [])
-console.log(trucks.data)//needs to target correct data
+  console.log(trucks.data)//needs to target correct data
+
   useEffect(() => {
     setFilteredTrucks(
       trucks.filter(truck => {
@@ -37,10 +41,10 @@ console.log(trucks.data)//needs to target correct data
       <input type="text" placeholder="Search" onChange={e => setSearch(e.target.value)} />
       {filteredTrucks.map((truck, index) => {
         return (<Truck key={index} details={truck} />
-      )
+        )
+        
       })
       }
-
     </div>
   )
 } 
