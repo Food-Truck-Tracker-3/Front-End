@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import Search from './components/Search'
+import Diner from './components/Diner'
 
 function App() {
   return (
     <div className="App">
-      <h1>React App</h1>
-      <Search />
+      <Diner />
     </div>
   );
 };

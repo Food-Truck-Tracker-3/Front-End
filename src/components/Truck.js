@@ -1,4 +1,5 @@
 import React from 'react'
+import MenuItem from './MenuItem'
 
 export default function Truck(props) {
   const {
@@ -18,7 +19,14 @@ export default function Truck(props) {
       <h2>{details.name}</h2>
       <p>{details.status}</p>
       <p>{details.gender}</p>
-      <button onClick={() => saved}>Save</button>
+      {/* <h2>{details.name}</h2>
+      <p>{details.imageOfTruck}</p>
+      <p>{details.cuisineType}</p>
+      <p>{details.customerRating}</p>
+      <p>{details.menu}</p>
+      <p>{details.currentLocation.location}</p>
+      <p>{details.currentLocation.departureTime}</p> */}
+      <MenuItem />
     </div>
   )
 }
