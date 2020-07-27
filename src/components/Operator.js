@@ -9,7 +9,7 @@ const initialFormsValue = {
 }
 
 export default function Operator() {
-  const [user, setUser] = useState([initialFormsValue])
+  const [user, setUser] = useState(initialFormsValue)
   return (
     <div>
       <h1>Welcome (placeholder name)!</h1>

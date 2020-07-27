@@ -9,8 +9,8 @@ const initialFormValues = {
   customerRatingsAvg: Number
 }
 
-export default function MenuItem {
+export default function MenuItem() {
   const [menuItem, setMenuItem] = useState(initialFormValues)
-  
+
   return null
 }

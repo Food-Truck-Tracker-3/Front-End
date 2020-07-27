@@ -1,5 +1,7 @@
 import React from 'react'
 import MenuItem from './MenuItem'
+import SaveFavorite from './Favorite'
+
 
 export default function Truck(props) {
   const {
@@ -27,6 +29,10 @@ export default function Truck(props) {
       <p>{details.currentLocation.location}</p>
       <p>{details.currentLocation.departureTime}</p> */}
       <MenuItem />
+
+      <SaveFavorite />
+
+
     </div>
   )
 }
