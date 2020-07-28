@@ -1,16 +1,16 @@
-import {LOGIN, CREATE_DINER_ACCOUNT, CREATE_OPERATOR_ACCOUNT, REGISTER_START, LOGIN_START} from "../actions";
+import {LOGIN, REGISTER_DINER, REGISTER_OPERATOR, REGISTER_START, LOGIN_START} from "../actions";
 import {combineReducers} from "redux";
 
 
-initialLoginState = {
+const initialLoginState = {
     isLoading: false,
-    userInfo: {},
+    message: "",
     error: "Wrong username or password!"
 };
 
-initialRegisterState = {
+const initialRegisterState = {
     isLoading: false,
-    userInfo: {},
+    message: "",
     error: ""
 };
 
@@ -25,10 +25,13 @@ const loginReducer = (state = initialLoginState, action) => {
         case LOGIN:
             return{
                 ...state,
-                isLoading:false,
+                isLoading: false,
                 userInfo: action.payload,
                 error: ""
             };
+
+        default: 
+            return state;
     };
 };
 
@@ -39,20 +42,23 @@ const registerReducer = (state = initialRegisterState, action) => {
                 ...state,
                 isLoading: true
             };
-        case CREATE_DINER_ACCOUNT: 
+        case REGISTER_DINER: 
             return{
                 ...state,
                 isLoading: false,
-                userInfo: action.payload,
+                message: action.payload,
                 error: ""
             };
-        case CREATE_OPERATOR_ACCOUNT:
+        case REGISTER_OPERATOR:
             return{
                 ...state,
                 isLoading: false,
-                userInfo: action.payload,
+                message: action.payload,
                 error: ""
             };
+            
+        default: 
+            return state;
     };
 };
 
