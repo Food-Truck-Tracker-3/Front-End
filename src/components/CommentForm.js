@@ -19,14 +19,14 @@ const initialComments = []
 
 const initialDisabled = true
 
-export default function CommentList() {
+export default function CommentForm() {
   const [formErrors, setFormErrors] = useState(initialFormErrors)
   const [formValues, setFormValues] = useState(initialFormValues)
   const [comments, setComments] = useState(initialComments)
   const [disabled, setDisabled] = useState(initialDisabled)
 
   const postNewComment = newFriend => {
-    axios.post('https://rickandmortyapi.com/api/character/', newFriend)
+    axios.post('https://foodtruck-backend-3.herokuapp.com/api/galo', newFriend)
       .then(res => {
         setComments([res.data, ...comments])
         setFormValues(initialFormValues)
@@ -95,7 +95,7 @@ export default function CommentList() {
   return (
     <form className='form-container' onSubmit={onSubmit}>
       <div>
-        <Comment />
+        <Comment key={comments.id} details={comments}/>
       </div>
       <label>
         <input
