@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Truck from './Truck'
+import styled from 'styled-components'
 
 
 
@@ -19,7 +20,7 @@ export default function Search() {
         debugger
       })
   }, [])
-  // console.log(trucks.data)//needs to target correct data
+  //needs to target correct data
 
   useEffect(() => {
     setFilteredTrucks(
@@ -27,16 +28,26 @@ export default function Search() {
         return truck.name.toLowerCase().includes(search.toLowerCase())
       })
     )
-  }, [search, trucks])
+  }, [trucks, search])
 
   return (
-    <div>
-      <input type="text" placeholder="Search" onChange={e => setSearch(e.target.value)} />
+    <StyledSearchBar>
+      <input type="text" id="search-bar" placeholder="Search" onChange={e => setSearch(e.target.value)} />
       {filteredTrucks.map((truck, index) => {
         return (<Truck key={index} details={truck}  />
         )        
       })
       }
-    </div>
+    </StyledSearchBar>
   )
 } 
+
+const StyledSearchBar = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  #search-bar {
+    display: flex;
+    flex-wrap: wrap;
+  }
+`

@@ -1,36 +1,35 @@
 import React from 'react'
 import MenuItem from './MenuItem'
-
+import CommentForm from './CommentForm'
+import styled from 'styled-components'
 
 export default function Truck(props) {
-  const {
-    details,
-    saved
-  } = props
+  const { details } = props
+
   if (!details) {
-    return <h3>Working fetching your friend&apos;s details...</h3>
+    return <h3>Working fetching Truck&apos;s details...</h3>
   }
 
-  // const saveTruck = () => {
+  // const savedetails = () => {
 
   // }
-
+console.log(details.name)
   return (
-    <div className='friend container' onChange={saved}>
-      <h2>{details.name}</h2>
-      <p>{details.status}</p>
-      <p>{details.gender}</p>
-      {/* <h2>{details.name}</h2>
-      <p>{details.imageOfTruck}</p>
-      <p>{details.cuisineType}</p>
-      <p>{details.customerRating}</p>
-      <p>{details.menu}</p>
-      <p>{details.currentLocation.location}</p>
-      <p>{details.currentLocation.departureTime}</p> */}
-      <MenuItem />
-
-
-
+    <div className='truck-container'>
+      <div>
+      <p>{details.name}</p>
+      {/* <p>{details.description}</p>
+      <p>{details.cuisine}</p>
+      <p>{details.city}</p>
+      <p>{details.hours}</p> */}
+      {/* <MenuItem />
+      <CommentForm /> */}
+      </div>
     </div>
   )
 }
+
+// const StyledTruckContainer = styled.div`
+//   display: flex;
+//   align-items: center;
+// `
