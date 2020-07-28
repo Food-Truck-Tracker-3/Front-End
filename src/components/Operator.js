@@ -1,22 +1,34 @@
-import React, { useState } from 'react'
-import TruckList from './TruckList'
+import React from 'react'
+import {connect} from "react-redux";
+import Truck from './Truck'
 import AddTruck from './AddTruck'
 
-const initialFormsValue = {
-  username: "",
-  password: "",
-  trucksOwned: [],
-}
 
-export default function Operator() {
-  const [user, setUser] = useState(initialFormsValue)
+
+function Operator(props) {
+  
+
+ 
+
   return (
     <div>
-      <h1>Welcome (placeholder name)!</h1>
+      <h1>{props.userInfo.username}</h1>
       <p>Your Food Trucks</p>
       {/* list of owned trucks */}
       <TruckList/>
       <AddTruck />
     </div>
-  )
-}
+  );
+};
+
+const mapStateToProps = state => {
+  return {
+    isLoading: state.isLoading,
+    userInfo: state.userInfo,
+    error: state.error
+  };
+};
+
+export default connect(
+mapStateToProps, {}
+)(Operator);
