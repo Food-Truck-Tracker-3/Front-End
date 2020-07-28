@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Truck from './Truck'
 import axios from 'axios'
-import Search from './Search'
-
 
 const initialValuesForm = {
   imageOfTruck: "",
@@ -38,7 +36,6 @@ export default function TruckList() {
           <Truck key={index} truck={truck} />
         )
       })}
-      <Search />
     </div>
   )
 }

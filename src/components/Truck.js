@@ -1,6 +1,6 @@
 import React from 'react'
 import MenuItem from './MenuItem'
-import Search from './Search'
+import CommentList from './CommentList'
 
 export default function Truck(props) {
   const {
@@ -8,7 +8,7 @@ export default function Truck(props) {
     saved
   } = props
   if (!truck) {
-    return <h3>Working fetching your friend&apos;s details...</h3>
+    return <h3>Working fetching your Truck&apos;s details...</h3>
   }
 
   // const saveTruck = () => {
@@ -28,6 +28,7 @@ export default function Truck(props) {
       <p>{details.currentLocation.location}</p>
       <p>{details.currentLocation.departureTime}</p> */}
       <MenuItem />
+      <CommentList />
     </div>
   )
 }
