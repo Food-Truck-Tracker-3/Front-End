@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Truck from './Truck'
+import TruckList from './TruckList'
 import AddTruck from './AddTruck'
 
 const initialFormsValue = {
@@ -15,7 +15,7 @@ export default function Operator() {
       <h1>Welcome (placeholder name)!</h1>
       <p>Your Food Trucks</p>
       {/* list of owned trucks */}
-      <Truck />
+      <TruckList/>
       <AddTruck />
     </div>
   )

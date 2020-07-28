@@ -19,7 +19,7 @@ export default function Search() {
         debugger
       })
   }, [])
-  // console.log(trucks.data)//needs to target correct data
+  //needs to target correct data
 
   useEffect(() => {
     setFilteredTrucks(

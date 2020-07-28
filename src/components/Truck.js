@@ -1,13 +1,13 @@
 import React from 'react'
 import MenuItem from './MenuItem'
-
+import Search from './Search'
 
 export default function Truck(props) {
   const {
-    details,
+    truck,
     saved
   } = props
-  if (!details) {
+  if (!truck) {
     return <h3>Working fetching your friend&apos;s details...</h3>
   }
 
@@ -17,9 +17,9 @@ export default function Truck(props) {
 
   return (
     <div className='friend container' onChange={saved}>
-      <h2>{details.name}</h2>
-      <p>{details.status}</p>
-      <p>{details.gender}</p>
+      <h2>{truck.name}</h2>
+      <p>{truck.status}</p>
+      <p>{truck.gender}</p>
       {/* <h2>{details.name}</h2>
       <p>{details.imageOfTruck}</p>
       <p>{details.cuisineType}</p>
@@ -28,9 +28,6 @@ export default function Truck(props) {
       <p>{details.currentLocation.location}</p>
       <p>{details.currentLocation.departureTime}</p> */}
       <MenuItem />
-
-
-
     </div>
   )
 }

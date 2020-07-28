@@ -15,7 +15,7 @@ export default function Diner() {
     <div>
       <h1>Welcome (placeholder name)!</h1>
       <p>Find your favorite food truck</p>
-      <Search />
+      {/* <Search /> */}
       {/* list of favorite trucks */}
     </div>
   )
