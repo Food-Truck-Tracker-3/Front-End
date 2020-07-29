@@ -1,21 +1,16 @@
 import {LOGIN, REGISTER_DINER, REGISTER_OPERATOR, REGISTER_START, LOGIN_START} from "../actions";
-import {combineReducers} from "redux";
 
 
-const initialLoginState = {
+const initialState = {
     isLoading: false,
     userInfo: "",
     error: "Wrong username or password!"
 };
 
-const initialRegisterState = {
-    isLoading: false,
-    message: "",
-    error: ""
-};
 
 
-const loginReducer = (state = initialLoginState, action) => {
+
+export const reducer = (state = initialState, action) => {
     switch(action.type){
         case LOGIN_START:
             return{
@@ -30,15 +25,7 @@ const loginReducer = (state = initialLoginState, action) => {
                 userInfo: action.payload,
                 error: ""
             };
-            
-
-        default: 
-            return state;
-    };
-};
-
-const registerReducer = (state = initialRegisterState, action) => {
-    switch(action.type){
+        
         case REGISTER_START: 
             return{
                 ...state,
@@ -48,14 +35,14 @@ const registerReducer = (state = initialRegisterState, action) => {
             return{
                 ...state,
                 isLoading: false,
-                message: action.payload,
+                userInfo: action.payload,
                 error: ""
             };
         case REGISTER_OPERATOR:
             return{
                 ...state,
                 isLoading: false,
-                message: action.payload,
+                userInfo: action.payload,
                 error: ""
             };
             
@@ -66,10 +53,7 @@ const registerReducer = (state = initialRegisterState, action) => {
 
 
 
-export default combineReducers({
-    loginReducer,
-    registerReducer
-});
+
 
 
 

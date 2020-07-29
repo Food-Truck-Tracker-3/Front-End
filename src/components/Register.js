@@ -22,7 +22,7 @@ function Register(props) {
 
   const onChange = evt => {
 
-    let name = evt.target.name;
+    let  name = evt.target.name;
     let value;
 
     if (evt.target.type === "checkbox") {
@@ -32,7 +32,7 @@ function Register(props) {
     };
     updateForm(name, value);
     ;
-  }
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -42,7 +42,6 @@ function Register(props) {
       props.registerOperator(formValues)
     };
     setValues(initialValues);
-    console.log(props.state);
   };
 
 
@@ -112,10 +111,10 @@ function Register(props) {
           className='register'> Register Now</button>
 
 
-        <h3>{props.message}</h3>
+        <h3>{props.userInfo.error}</h3>
       </form>
     </div>    
-    </form>
+    
 
 
   );
