@@ -20,10 +20,10 @@ console.log(details.name)
     <div className='truck-container'>
       <div>
       <p>{details.name}</p>
-      {/* <p>{details.description}</p>
+      <p>{details.description}</p>
       <p>{details.cuisine}</p>
       <p>{details.city}</p>
-      <p>{details.hours}</p> */}
+      <p>{details.hours}</p>
       {/* <MenuItem />
       <CommentForm /> */}
       </div>

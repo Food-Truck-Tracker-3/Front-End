@@ -1,6 +1,8 @@
 * {
   /* border: 1px solid grey; */
   background-color: #FEF6DA;
+
+  font-family: "Overpass", regular;
 }
 
 .App {
@@ -9,32 +11,45 @@
   margin: 0 auto;
 }
 
-/* start of header component styling */
+/* start of HEADER component styling */
 .header-container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+}
+.header-container nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
 }
 a {
   text-decoration: none;
+  font-size: 1.2rem;
 }
 .logo {
   width: 15%;
   height: auto;
   max-width: 80px;
 }
-/* start of truck component styling */
+.logo-text {
+  font-size: 2rem;
+  display:flex;
+  align-items: center;
+  margin: 0 0 0 10px;
+}
+/* start of TRUCK component styling */
 .truck-container {
   display: flex;
 }
 
-/* start of diner component styling */
+/* start of DINER component styling */
 .diner-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* start of truck-list component styling */
+/* start of TRUCKLIST component styling */
 .truck-list-container {
   display: flex;
   /* flex-direction: column; */
@@ -42,7 +57,7 @@ a {
   justify-content: space-evenly;
 }
 
-/* start of register-container styling */
+/* start of REGISTER styling */
 .register-container {
   background-color: #FA565E;
   /* border: 1px solid black; */
@@ -57,11 +72,13 @@ a {
 
 .links {
   display: flex;
+  background-color: #FA565E;
 }
 
 .link {
   /* border: 1px black solid; */
   width: 150px;
+  background-color: #FA565E;
 }
 
 .login-container {
@@ -70,4 +87,8 @@ a {
   flex-direction: column;
   /* border: 1px solid black; */
   padding: 4%;
+}
+
+#login-text {
+  background-color: #FA565E;
 }
