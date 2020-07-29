@@ -13,7 +13,7 @@ export const login = user => {
         dispatch({type: LOGIN_START});
 
         axiosWithAuth()
-            .post("/api/auth/login", user)
+            .post("/api/api/auth/login", user)
             .then(res => {
                 console.log(res);
                 dispatch({type: LOGIN, payload: res.data});
@@ -32,7 +32,7 @@ export const registerDiner = diner => {
         dispatch({type: REGISTER_START});
 
         axiosWithAuth()
-            .post("/api/auth/register-diner", diner)
+            .post("/api/api/auth/register-diner", diner)
             .then(res => {
                 console.log(res);
                 dispatch({type: REGISTER_DINER, payload: res.data})
@@ -47,7 +47,7 @@ export const registerOperator = operator => {
         dispatch({type: REGISTER_START});
 
         axiosWithAuth()
-            .post("/api/auth/register-operator", operator)
+            .post("/api/api/auth/register-operator", operator)
             .then(res => {
                 console.log(res);
                 dispatch({type: REGISTER_OPERATOR, payload: res.data})
