@@ -5,12 +5,19 @@ import Diner from "./components/Diner";
 import Operator from "./components/Operator";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import axios from "axios";
 import './App.css';
 import Header from './components/Header'
 import TruckList from './components/TruckList'
 
 
 function App() {
+
+  axios.get("https://foodtruck-backend-3.herokuapp.com/api/oleg")
+  .then(function(response)
+    {
+      console.log(response)
+    })
   return (
     <Router>
       <div className="App">
