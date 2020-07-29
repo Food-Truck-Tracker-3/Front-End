@@ -70,8 +70,28 @@ a {
   background-color: #FA565E;
 }
 
-.register-form h1, p, #radio, .checkbox, .input {
+.radio {
+  display: flex;
+  flex-direction: row;
+  padding: 0 0 1.4% 0;
+}
+
+.radio input{
+  display: flex;
+  flex-direction: row;
+}
+
+.register-form h1, p, .radio, .checkbox, .input {
   background-color: #FA565E;
+}
+input[type=text],[type=email],[type=password] {
+  padding: 1.6%;
+  border: 2px solid #F6B638;
+  margin: 1%;
+}
+.input-2 {
+  padding: 1.5%;
+  margin: 1%;
 }
 
 .register-container {
@@ -95,7 +115,7 @@ button:disabled, button[disabled] {
   background-color: #FEF6DA;
   padding: .35em 1.2em;
   border: .2em solid #F6B638;
-  margin: 0 .3em .3em 0;
+  margin: 1em .3em .3em 0;
   border-radius: .12em;
   box-sizing: border-box;
   text-align: center;
@@ -116,6 +136,14 @@ button:disabled, button[disabled] {
   width: 150px;
   background-color: #FA565E;
   color: black;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+}
+.checkbox p {
+  padding: 1%;
 }
 
 /* start of LOGIN styling */

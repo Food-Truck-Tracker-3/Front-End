@@ -55,11 +55,16 @@ function Register(props) {
         <h1>Register</h1>
         <p>Create your account. It's free and only takes a minute.</p>
 
-        <div onChange={onChange} id="radio">
-          <input type="radio" value="diner" name="role" /> Customer
-        <input type="radio" value="owner" name="role" /> Owner
-
-      </div>
+        <div className="checkbox-container">
+          <div onChange={onChange} 
+          id="radio"
+          className="radio">
+            <input type="radio" value="diner" name="role" /> Customer
+          </div>
+          <div className="radio">
+            <input type="radio" value="owner" name="role" /> Owner
+        </div>
+        </div>
 
         <div className="input">
           <input
@@ -115,7 +120,7 @@ function Register(props) {
 
         <h3>{props.message}</h3>
       </form>
-    </div>    
+    </div>
 
 
   );
