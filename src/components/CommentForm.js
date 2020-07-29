@@ -25,10 +25,10 @@ export default function CommentForm() {
   const [comments, setComments] = useState(initialComments)
   const [disabled, setDisabled] = useState(initialDisabled)
 
-  const postNewComment = newFriend => {
-    axios.post('https://foodtruck-backend-3.herokuapp.com/api/galo', newFriend)
+  const postNewComment = newComment => {
+    axios.post('https://foodtruck-backend-3.herokuapp.com/api/galo', newComment)
       .then(res => {
-        setComments([res.data, ...comments])
+        setComments([res.data.data, ...comments])
         setFormValues(initialFormValues)
       })
       .catch(err => {
@@ -77,9 +77,9 @@ export default function CommentForm() {
   }
 
   useEffect(() => {
-    axios.get('https://rickandmortyapi.com/api/character/')
+    axios.get('https://foodtruck-backend-3.herokuapp.com/api/galo')
       .then(res => {
-        setComments(res.data.results)
+        setComments(res.data.data)
       })
       .catch(err => {
         debugger
