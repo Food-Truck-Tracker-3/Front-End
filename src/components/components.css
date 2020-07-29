@@ -5,11 +5,20 @@
   font-family: "Overpass", regular;
 }
 
-.App {
+.register-form {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
+  background-color: #FA565E;
 }
+
+.register-form h1, p, #radio, .checkbox, .input {
+  background-color: #FA565E;
+}
+
+/* button {
+  color: white;
+} */
 
 /* start of HEADER component styling */
 .header-container {
@@ -37,6 +46,12 @@ a {
   align-items: center;
   margin: 0 0 0 10px;
 }
+
+/* start of PRIVATE-ROUTE styling */
+.private-route-container {
+  background-color: #FA565E;
+}
+
 /* start of TRUCK component styling */
 .truck-container {
   display: flex;

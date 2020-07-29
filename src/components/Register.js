@@ -50,7 +50,7 @@ function Register(props) {
 
   return (
     <div className='login-container'>
-      <form className="App" onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleSubmit}>
         <h1>Register</h1>
         <p>Create your account. It's free and only takes a minute.</p>
 
@@ -60,7 +60,7 @@ function Register(props) {
 
       </div>
 
-        <div>
+        <div className="input">
           <input
             name='username'
             type='text'
@@ -73,7 +73,7 @@ function Register(props) {
 
         </div>
 
-        <div>
+        <div className="input">
           <input
             name='email'
             type='email'
@@ -84,7 +84,7 @@ function Register(props) {
           />
         </div>
 
-        <div>
+        <div className="input">
           <input
             name='password'
             type='password'
