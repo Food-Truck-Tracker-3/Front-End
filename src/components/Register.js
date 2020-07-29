@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { registerDiner, registerOperator } from "../store/actions";
+import './components.css'
 
 const initialValues = {
   role: '',
@@ -109,7 +110,7 @@ function Register(props) {
         </div>
 
         <button disabled={!formValues.role || !formValues.username || !formValues.email || !formValues.checkbox || !formValues.password}
-          className='register'> Register Now</button>
+          className='register, button'> Register Now</button>
 
 
         <h3>{props.message}</h3>

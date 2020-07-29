@@ -5,17 +5,6 @@
   font-family: "Overpass", regular;
 }
 
-.register-form {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  background-color: #FA565E;
-}
-
-.register-form h1, p, #radio, .checkbox, .input {
-  background-color: #FA565E;
-}
-
 /* button {
   color: white;
 } */
@@ -34,6 +23,7 @@
 a {
   text-decoration: none;
   font-size: 1.2rem;
+  color: black;
 }
 .logo {
   width: 15%;
@@ -73,6 +63,17 @@ a {
 }
 
 /* start of REGISTER styling */
+.register-form {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #FA565E;
+}
+
+.register-form h1, p, #radio, .checkbox, .input {
+  background-color: #FA565E;
+}
+
 .register-container {
   background-color: #FA565E;
   /* border: 1px solid black; */
@@ -85,6 +86,26 @@ a {
   border-radius: 10px;
 }
 
+
+button:disabled, button[disabled] {
+  background-color: #FEF6DA;
+
+}
+.button {
+  background-color: #FEF6DA;
+  padding: .35em 1.2em;
+  border: .2em solid #F6B638;
+  margin: 0 .3em .3em 0;
+  border-radius: .12em;
+  box-sizing: border-box;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background-color: #F6B638;
+}
+
 .links {
   display: flex;
   background-color: #FA565E;
@@ -94,7 +115,10 @@ a {
   /* border: 1px black solid; */
   width: 150px;
   background-color: #FA565E;
+  color: black;
 }
+
+/* start of LOGIN styling */
 
 .login-container {
   background-color: #FA565E;
@@ -105,5 +129,9 @@ a {
 }
 
 #login-text {
+  background-color: #FA565E;
+}
+
+.login-container form {
   background-color: #FA565E;
 }

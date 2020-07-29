@@ -46,7 +46,7 @@ const Login = props => {
               onChange={handleChanges}
             />
             <br />
-            <button>Log in</button>
+            <button className="button">Log in</button>
           </form>
         </div>
       );

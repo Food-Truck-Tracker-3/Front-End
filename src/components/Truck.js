@@ -3,7 +3,7 @@ import MenuItem from './MenuItem'
 import CommentForm from './CommentForm'
 import styled from 'styled-components'
 import './components.css'
-import './components.css'
+
 
 export default function Truck(props) {
   const { details } = props
