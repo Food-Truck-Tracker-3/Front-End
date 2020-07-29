@@ -12,7 +12,7 @@ function Diner(props) {
 
   return (
     <div className='diner-container'>
-      {/* <h1>{props.userInfo.username}</h1> */}
+      <h1>{props.userInfo.data.username}</h1>
       <p>Your Food Trucks</p>
       <Truck />
       <TruckList />
