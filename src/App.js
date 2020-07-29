@@ -5,23 +5,16 @@ import Diner from "./components/Diner";
 import Operator from "./components/Operator";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import axios from "axios";
 import './App.css';
-
+import Menu from "./components/Menu";
 
 function App() {
-
-  axios.get("https://foodtruck-backend-3.herokuapp.com/api/oleg")
-  .then(function(response)
-    {
-      console.log(response)
-    })
   return (
     <Router>
       <div className="App">
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
-
+        <Menu/>
         
         <Switch>
           <PrivateRoute exact path="/operator/:id" component={Operator}/>
