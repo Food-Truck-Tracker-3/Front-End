@@ -4,7 +4,7 @@ import {combineReducers} from "redux";
 
 const initialLoginState = {
     isLoading: false,
-    message: "",
+    userInfo: "",
     error: "Wrong username or password!"
 };
 
@@ -22,6 +22,7 @@ const loginReducer = (state = initialLoginState, action) => {
                 ...state,
                 isLoading: true
             };
+            
         case LOGIN:
             return{
                 ...state,
@@ -29,6 +30,7 @@ const loginReducer = (state = initialLoginState, action) => {
                 userInfo: action.payload,
                 error: ""
             };
+            
 
         default: 
             return state;
