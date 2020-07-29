@@ -29,7 +29,7 @@ export default function TruckList() {
   // console.log(trucks.data.results)
 
   return (
-    <div>
+    <div className='truck-list-container'>
       {trucks.map((truck, index) => {
         return (
           <Truck key={index} details={truck} />

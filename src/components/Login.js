@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {connect} from "react-redux";
 import {login} from "../store/actions";
+import './components.css'
 
 const initialValues = {
     username: "",
@@ -27,20 +28,24 @@ const Login = props => {
 
 
     return (
-        <div>
+        <div className='login-container'>
           <form onSubmit={handleSubmit}>
             <input
               type="text"
               name="username"
+              placeholder="Username"
               value={values.username}
               onChange={handleChanges}
             />
+            <br />
             <input
               type="password"
               name="password"
+              placeholder="Password"
               value={values.password}
               onChange={handleChanges}
             />
+            <br />
             <button>Log in</button>
           </form>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from "react-redux";
-
+import Truck from './Truck'
+import TruckList from './TruckList';
 
 
 
@@ -10,9 +11,11 @@ function Diner(props) {
  
 
   return (
-    <div>
+    <div className='diner-container'>
       <h1>{props.userInfo.data.username}</h1>
       <p>Your Food Trucks</p>
+      <Truck />
+      <TruckList />
       
     </div>
   );

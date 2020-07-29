@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+git commit -m 'Pairprogramming on component styling'
+
+Co-authored-by: Erica Girges ericafiorenza@gmail.com
+Co-authored-by: Oleg M olem2233@gmail.com
+Co-authored-by: Galo Sandoval galosan92@gmail.com'
+
 ## Available Scripts
 
 Random note
