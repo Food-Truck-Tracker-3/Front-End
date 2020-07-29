@@ -1,0 +1,73 @@
+* {
+  /* border: 1px solid grey; */
+  background-color: #FEF6DA;
+}
+
+.App {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* start of header component styling */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+}
+.logo {
+  width: 15%;
+  height: auto;
+  max-width: 80px;
+}
+/* start of truck component styling */
+.truck-container {
+  display: flex;
+}
+
+/* start of diner component styling */
+.diner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* start of truck-list component styling */
+.truck-list-container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/* start of register-container styling */
+.register-container {
+  background-color: #FA565E;
+  /* border: 1px solid black; */
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  margin: 8% auto 0 auto;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.links {
+  display: flex;
+}
+
+.link {
+  /* border: 1px black solid; */
+  width: 150px;
+}
+
+.login-container {
+  background-color: #FA565E;
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  padding: 4%;
+}
