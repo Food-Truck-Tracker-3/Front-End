@@ -110,7 +110,7 @@ function Register(props) {
       <button disabled= {!formValues.role || !formValues.username || !formValues.email || !formValues.checkbox || !formValues.password}  
         className = 'register'> Register Now</button>
 
-      <h3>{props.message}</h3>
+    
     </form>
     
 
