@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { registerDiner, registerOperator } from "../store/actions";
+import './components.css'
 
 const initialValues = {
   role: '',
@@ -50,17 +51,22 @@ function Register(props) {
 
   return (
     <div className='login-container'>
-      <form className="App" onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleSubmit}>
         <h1>Register</h1>
         <p>Create your account. It's free and only takes a minute.</p>
 
-        <div onChange={onChange} id="radio">
-          <input type="radio" value="diner" name="role" /> Customer
-        <input type="radio" value="owner" name="role" /> Owner
+        <div className="checkbox-container">
+          <div onChange={onChange} 
+          id="radio"
+          className="radio">
+            <input type="radio" value="diner" name="role" /> Customer
+          </div>
+          <div className="radio">
+            <input type="radio" value="owner" name="role" /> Owner
+        </div>
+        </div>
 
-      </div>
-
-        <div>
+        <div className="input">
           <input
             name='username'
             type='text'
@@ -73,7 +79,7 @@ function Register(props) {
 
         </div>
 
-        <div>
+        <div className="input">
           <input
             name='email'
             type='email'
@@ -84,7 +90,7 @@ function Register(props) {
           />
         </div>
 
-        <div>
+        <div className="input">
           <input
             name='password'
             type='password'
@@ -109,13 +115,12 @@ function Register(props) {
         </div>
 
         <button disabled={!formValues.role || !formValues.username || !formValues.email || !formValues.checkbox || !formValues.password}
-          className='register'> Register Now</button>
+          className='register, button'> Register Now</button>
 
 
         <h3>{props.message}</h3>
       </form>
-    </div>    
-    </form>
+    </div>
 
 
   );

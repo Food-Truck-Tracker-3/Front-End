@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import Truck from './Truck'
 import axios from 'axios'
+import Header from './Header'
+import './components.css'
 
 // const initialValuesForm = {
 //   operator_id: "",
@@ -15,10 +17,10 @@ export default function TruckList() {
   const [trucks, setTrucks] = useState([])
 
   useEffect(() => {
-    axios.get('https://rickandmortyapi.com/api/character/')
+    axios.get('https://foodtruck-backend-3.herokuapp.com/api/galo')
       .then(res => {
-        setTrucks(res.data.results)
-        console.log(res.data.results)
+        setTrucks(res.data.data)
+        console.log(res.data)
       })
       .catch(err => {
         console.log(err, 'uh oh')
@@ -26,15 +28,19 @@ export default function TruckList() {
   }, [])
 
 
-  // console.log(trucks.data.results)
+  console.log(trucks)
 
   return (
-    <div className='truck-list-container'>
-      {trucks.map((truck, index) => {
-        return (
-          <Truck key={index} details={truck} />
-        )
-      })}
+    <div>
+      <Header />
+      <div className='truck-list-container'>
+        {trucks.map((truck, index) => {
+          return (
+            <Truck key={index} details={truck} />
+          )
+        })}
+      </div>
     </div>
   )
+  // return null
 }
