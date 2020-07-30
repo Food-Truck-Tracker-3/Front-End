@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Truck from '../Operator/Truck'
+import '../components.css'
 
 
 
@@ -29,13 +30,15 @@ export default function Search() {
   }, [trucks, search])
 
   return (
-    <div>
+    <div className='search-container'>
       <input type="text" id="search-bar" placeholder="Search" onChange={e => setSearch(e.target.value)} />
+      <div className='truck-list-container'>
       {filteredTrucks.map((truck, index) => {
         return (<Truck key={index} details={truck}  />
         )        
       })
       }
+      </div>
     </div>
   )
 } 

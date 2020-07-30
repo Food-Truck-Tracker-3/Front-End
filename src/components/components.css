@@ -54,8 +54,15 @@ a {
   justify-content: space-evenly;
   align-items: center;
 }
-
-
+.search-container {
+  display: flex;
+  flex-direction: column;
+}
+#search-bar {
+  display: flex;
+  align-self: center;
+  margin: 3%;
+}
 
 /* start of TRUCK component styling */
 .truck-container {
@@ -122,7 +129,7 @@ label [for='input'] {
 .register-container {
   background-color: #FA565E;
   /* border: 1px solid black; */
-  padding: 4% 4% 0 4%;
+  padding: 1.5% 4% 0 4%;
   display: flex;
   flex-direction: column;
   margin: 8% auto 0 auto;
@@ -202,3 +209,20 @@ button:disabled, button[disabled] {
 .login-container form {
   background-color: #FA565E;
 }
+
+/* start of COMMENTFORM styling */
+.form-container {
+  height:450px;
+  margin:auto;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+   #comment-form {
+  height: 120px;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2%;
+   }

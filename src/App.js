@@ -9,13 +9,15 @@ import User from "./components/User";
 import Search from "../src/components/Diner/Search"
 import '../src/components/components.css'
 import TruckList from './components/Operator/TruckList';
+import Menu from './components/Operator/Menu';
+import CommentForm from './components/Operator/CommentForm';
 
 
 
 function App() {
   return (
     <Router>
-      {/* <div className="App">
+      <div className="App">
         <Header />
         <div className="register-container">
           <div className='links'>
@@ -29,9 +31,8 @@ function App() {
             <Route path="/register" component={Register} />
           </Switch> 
         </div>
-      </div> */}
-      {/* <Search /> */}
-      <TruckList />
+      </div>
+      <CommentForm />
     </Router>
   );
 };

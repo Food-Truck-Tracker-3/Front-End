@@ -3,6 +3,7 @@ import * as yup from 'yup'
 import formSchema from './commentSchema'
 import axios from 'axios'
 import Comment from './Comment'
+import '../components.css'
 
 const initialFormValues = {
   comment: "",
@@ -98,7 +99,8 @@ export default function CommentForm() {
         <Comment key={comments.id} details={comments}/>
       </div>
       <label>
-        <input
+        <textarea
+          id='comment-form'
           value={formValues.comment}
           onChange={onInputChange}
           name='comment'
