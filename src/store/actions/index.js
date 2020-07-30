@@ -23,6 +23,8 @@ export const fetchTrucks = () => {
     };
 };
 
+
+
 export const addTruck = truck => {
     return dispatch => {
         axiosWithAuth()
