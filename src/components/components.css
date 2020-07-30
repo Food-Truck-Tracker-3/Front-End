@@ -2,7 +2,7 @@
   /* border: 1px solid grey; */
   background-color: #FEF6DA;
 
-  font-family: "Overpass", regular;
+  font-family: "Overpass";
 }
 
 /* button {
@@ -45,7 +45,10 @@ a {
 /* start of TRUCK component styling */
 .truck-container {
   display: flex;
+
 }
+
+
 
 /* start of DINER component styling */
 .diner-container {
@@ -137,13 +140,24 @@ button:disabled, button[disabled] {
 .links {
   display: flex;
   background-color: #FA565E;
+  /* text-align: center; */
+  /* padding: 7px 9px; */
 }
 
 .link {
   /* border: 1px black solid; */
-  width: 150px;
+  width: auto;
   background-color: #FA565E;
   color: black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 7px 9px;
+}
+
+.link:focus {
+  background-color: white;
+
 }
 
 .checkbox {

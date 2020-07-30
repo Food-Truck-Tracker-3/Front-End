@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { registerDiner, registerOperator } from "../store/actions";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import './components.css';
 
 
@@ -15,7 +15,7 @@ const initialValues = {
 
 function Register(props) {
 
-  const {push} = useHistory();
+  const { push } = useHistory();
 
   const [formValues, setValues] = useState(initialValues);
 
@@ -27,7 +27,7 @@ function Register(props) {
 
   const onChange = evt => {
 
-    let  name = evt.target.name;
+    let name = evt.target.name;
     let value;
 
     if (evt.target.type === "checkbox") {
@@ -45,9 +45,9 @@ function Register(props) {
       props.registerDiner(formValues);
     } else {
       props.registerOperator(formValues);
-    }  
+    }
     setValues(initialValues);
-    
+
   };
 
 
@@ -56,13 +56,12 @@ function Register(props) {
   return (
     <div className='login-container'>
       <form className="register-form" onSubmit={handleSubmit}>
-        <h1 className='register-text'>Register</h1>
         <p className='register-text'>Create your account. It's free and only takes a minute.</p>
 
         <div className="checkbox-container">
-          <div onChange={onChange} 
-          id="radio"
-          className="radio">
+          <div onChange={onChange}
+            id="radio"
+            className="radio">
             <input type="radio" value="diner" name="role" /> Customer
           </div>
           <div className="radio">
@@ -120,7 +119,7 @@ function Register(props) {
           className='register, button'> Register Now</button>
       </form>
       {props.data && <h3>{props.data.message}</h3>}
-    </div>    
+    </div>
 
   );
 };

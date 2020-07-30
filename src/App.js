@@ -7,6 +7,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
 import User from "./components/User";
 import Search from "../src/components/Diner/Search"
+import '../src/components/components.css'
 
 
 
