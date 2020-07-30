@@ -3,7 +3,9 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Header from './components/Header';
+import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
+import User from "./components/User";
 
 
 
@@ -19,6 +21,7 @@ function App() {
           </div>
         
           <Switch>
+            <PrivateRoute exact path="/user/:id" component={User}/>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
           </Switch> 
