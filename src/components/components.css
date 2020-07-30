@@ -164,6 +164,7 @@ button:disabled, button[disabled] {
 .links {
   display: flex;
   background-color: #FA565E;
+  padding-bottom: 3%;
   /* text-align: center; */
   /* padding: 7px 9px; */
 }

@@ -9,10 +9,6 @@ import {fetchTrucks, addTruck} from "../../store/actions";
 function Operator({user}, props) {
   
 
-  useEffect(() => {
-    props.fetchTrucks();
-  });
-
   return (
     <div>
       <h1>{user.username}</h1>

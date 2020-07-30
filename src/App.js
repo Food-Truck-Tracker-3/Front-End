@@ -6,16 +6,7 @@ import Header from './components/Header';
 import User from "./components/User";
 import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
-<<<<<<< HEAD
-import User from "./components/User";
-import Search from "../src/components/Diner/Search"
 import '../src/components/components.css'
-import TruckList from './components/Operator/TruckList';
-import Menu from './components/Operator/Menu';
-import CommentForm from './components/Operator/CommentForm';
-=======
->>>>>>> origin/master
-
 
 
 function App() {
@@ -32,12 +23,8 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <Header userData={userData} />
         <div className="register-container">
-          <div className='links'>
-            <Link className='link' to="/login">Login</Link>
-            <Link className='link' to="/register">Register</Link>
-          </div>
         
           <Switch>
             <PrivateRoute exact path="/user/:id">
