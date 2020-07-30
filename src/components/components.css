@@ -1,8 +1,7 @@
 * {
   /* border: 1px solid grey; */
   background-color: #FEF6DA;
-
-  font-family: "Overpass";
+  font-family: 'Overpass', sans-serif;
 }
 
 /* button {
@@ -35,6 +34,7 @@ a {
   display:flex;
   align-items: center;
   margin: 0 0 0 10px;
+  font-family: 'Rowdies';
 }
 
 /* start of PRIVATE-ROUTE styling */
