@@ -91,7 +91,7 @@ function RegisterDiner(props) {
           />
 
 
-          <p>I accept the Terms of Use & Privacy Policy.</p>
+          <p className='register-text'>I accept the Terms of Use & Privacy Policy.</p>
         </div>
 
         <button disabled={!formValues.username || !formValues.email || !formValues.checkbox || !formValues.password}
