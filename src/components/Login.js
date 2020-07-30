@@ -36,7 +36,6 @@ const Login = ({setUserData}) => {
           <div className='login-container'>
             <form onSubmit={handleSubmit}>
               <input
-                className="input-2"
                 type="text"
                 name="username"
                 placeholder="Username"
@@ -45,7 +44,6 @@ const Login = ({setUserData}) => {
               />
               <br />
               <input
-                className="input-2"
                 type="password"
                 name="password"
                 placeholder="Password"

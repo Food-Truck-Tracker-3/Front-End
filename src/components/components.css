@@ -2,7 +2,7 @@
   /* border: 1px solid grey; */
   background-color: #FEF6DA;
 
-  font-family: "Overpass", regular;
+  font-family: "Overpass";
 }
 
 /* button {
@@ -42,24 +42,51 @@ a {
   background-color: #FA565E;
 }
 
+/* start of TRUCKLIST component styling */
+.truck-list-title {
+  display: flex;
+  justify-content: center;
+}
+.truck-list-container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.search-container {
+  display: flex;
+  flex-direction: column;
+}
+#search-bar {
+  display: flex;
+  align-self: center;
+  margin: 3%;
+}
+
 /* start of TRUCK component styling */
 .truck-container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FA565E;
+  border-radius: 10px;
+  padding: 5%;
+  margin: 5%;
+  height: auto;
 }
+ 
+.truck-container p{
+  background-color: #FA565E;
+  
+} 
+
 
 /* start of DINER component styling */
 .diner-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* start of TRUCKLIST component styling */
-.truck-list-container {
-  display: flex;
-  /* flex-direction: column; */
-  flex-wrap: wrap;
-  justify-content: space-evenly;
 }
 
 /* start of REGISTER styling */
@@ -81,29 +108,35 @@ a {
   flex-direction: row;
 }
 
-.register-form h1, p, .radio, .checkbox, .input {
+.register-form .register-text, .radio, .checkbox, .input {
   background-color: #FA565E;
 }
-input[type=text],[type=email],[type=password] {
-  padding: 1.6%;
+input[type=text],[type=email],[type=password], [name=username] {
+  /* padding: 1.6%;
   border: 2px solid #F6B638;
-  margin: 1%;
+  margin: 1%; */
+  border: 0;
+  padding: 5px 30px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: white;
 }
-.input-2 {
-  padding: 1.5%;
-  margin: 1%;
+
+label [for='input'] {
+  margin-top: 5px;
 }
 
 .register-container {
   background-color: #FA565E;
   /* border: 1px solid black; */
-  padding: 5%;
+  padding: 1.5% 4% 0 4%;
   display: flex;
   flex-direction: column;
   margin: 8% auto 0 auto;
   max-width: 600px;
   width: 100%;
   border-radius: 10px;
+  width: 420px;
 }
 
 
@@ -111,15 +144,17 @@ button:disabled, button[disabled] {
   background-color: #FEF6DA;
 
 }
-.button {
-  background-color: #FEF6DA;
-  padding: .35em 1.2em;
-  border: .2em solid #F6B638;
-  margin: 1em .3em .3em 0;
-  border-radius: .12em;
+.button, button{
+  background-color: white;
+  font-size: .8rem;
+  padding: 7px 9px;
+  border: none;
+  width: 140px;
+  border-radius: 10px;
   box-sizing: border-box;
   text-align: center;
   transition: all 0.2s;
+  box-shadow: 1px 1px 4px grey;
 }
 
 .button:hover {
@@ -129,13 +164,24 @@ button:disabled, button[disabled] {
 .links {
   display: flex;
   background-color: #FA565E;
+  /* text-align: center; */
+  /* padding: 7px 9px; */
 }
 
 .link {
   /* border: 1px black solid; */
-  width: 150px;
+  width: auto;
   background-color: #FA565E;
   color: black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 7px 9px;
+}
+
+.link:focus {
+  background-color: white;
+
 }
 
 .checkbox {
@@ -163,3 +209,20 @@ button:disabled, button[disabled] {
 .login-container form {
   background-color: #FA565E;
 }
+
+/* start of COMMENTFORM styling */
+.form-container {
+  height:450px;
+  margin:auto;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  }
+   #comment-form {
+  height: 120px;
+  width: 200px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 2%;
+   }
