@@ -10,7 +10,6 @@ import Header from './components/Header'
 import TruckList from './components/TruckList'
 
 
-
 function App() {
   return (
     <Router>
