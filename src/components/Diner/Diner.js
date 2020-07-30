@@ -1,34 +1,25 @@
 import React from 'react'
-import {connect} from "react-redux";
+// import {connect} from "react-redux";
 
-import TruckList from '../Operator/TruckList';
-
-
-
-function Diner(props) {
-  
-
- 
-
+function Diner({user}) {
   return (
     <div className='diner-container'>
-      <h1>{props.userInfo.data.username}</h1>
-      <p>Your Food Trucks</p>
-
-      <TruckList />
-      
+      <h1>{user.username}</h1>
+      <p>Your Favorite Trucks</p>
     </div>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    isLoading: state.isLoading,
-    userInfo: state.userInfo,
-    error: state.error
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     isLoading: state.isLoading,
+//     data: state.data,
+//     error: state.error
+//   };
+// };
 
-export default connect(
-mapStateToProps, {}
-)(Diner);
+// export default connect(
+// mapStateToProps, {}
+// )(Diner);
+
+export default Diner;
