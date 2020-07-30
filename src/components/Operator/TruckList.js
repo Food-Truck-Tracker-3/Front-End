@@ -3,6 +3,7 @@ import Truck from './Truck'
 import axios from 'axios'
 import Header from '../Header'
 import '../components.css'
+import EditTruck from './EditTruck'
 
 // const initialValuesForm = {
 //   operator_id: "",
@@ -33,12 +34,14 @@ export default function TruckList() {
   return (
     <div>
       <Header />
+      <h2 className='truck-list-title'>Food Trucks</h2>
       <div className='truck-list-container'>
         {trucks.map((truck, index) => {
           return (
             <Truck key={index} details={truck} />
           )
         })}
+        <EditTruck editTruck={trucks.editTruck} />
       </div>
     </div>
   )

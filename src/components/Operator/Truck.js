@@ -2,8 +2,8 @@ import React from 'react'
 import MenuItem from './MenuItem'
 import CommentForm from './CommentForm'
 import styled from 'styled-components'
-import '../components.css'
 import EditTruck from "./EditTruck"
+import '../components.css'
 
 
 export default function Truck(props) {
@@ -13,27 +13,19 @@ export default function Truck(props) {
     return <h3>Working fetching Truck&apos;s details...</h3>
   }
 
-  // const savedetails = () => {
-
-  // }
-console.log(details.name)
+  console.log(details.name)
   return (
-    <div className='truck-container'>
-      <EditTruck editTruck={props.editTruck} />
-      <div>
-      <p>{details.name}</p>
-      <p>{details.description}</p>
-      <p>{details.cuisine}</p>
-      <p>{details.city}</p>
-      <p>{details.hours}</p>
-      {/* <MenuItem />
+    <div>
+      {/* <EditTruck editTruck={props.editTruck} /> */}
+      <div className='truck-container'>
+        <p>{details.name}</p>
+        <p>{details.description}</p>
+        <p>{details.cuisine}</p>
+        <p>{details.city}</p>
+        <p>{details.hours}</p>
+        {/* <MenuItem />
       <CommentForm /> */}
       </div>
     </div>
   )
 }
-
-// const StyledTruckContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-// `

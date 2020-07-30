@@ -8,13 +8,14 @@ import './App.css';
 import User from "./components/User";
 import Search from "../src/components/Diner/Search"
 import '../src/components/components.css'
+import TruckList from './components/Operator/TruckList';
 
 
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      {/* <div className="App">
         <Header />
         <div className="register-container">
           <div className='links'>
@@ -28,8 +29,9 @@ function App() {
             <Route path="/register" component={Register} />
           </Switch> 
         </div>
-      </div>
-      <Search />
+      </div> */}
+      {/* <Search /> */}
+      <TruckList />
     </Router>
   );
 };
