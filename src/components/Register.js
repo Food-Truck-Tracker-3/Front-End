@@ -56,8 +56,8 @@ function Register(props) {
   return (
     <div className='login-container'>
       <form className="register-form" onSubmit={handleSubmit}>
-        <h1>Register</h1>
-        <p>Create your account. It's free and only takes a minute.</p>
+        <h1 className='register-text'>Register</h1>
+        <p className='register-text'>Create your account. It's free and only takes a minute.</p>
 
         <div className="checkbox-container">
           <div onChange={onChange} 
@@ -74,7 +74,7 @@ function Register(props) {
           <input
             name='username'
             type='text'
-            placeholder='Enter Name'
+            placeholder='Your name...'
             maxLength='18'
             minLength='2'
             value={formValues.username}
@@ -87,8 +87,7 @@ function Register(props) {
           <input
             name='email'
             type='email'
-            placeholder='Enter Email'
-
+            placeholder='Your email...'
             value={formValues.email}
             onChange={onChange}
           />
@@ -98,7 +97,7 @@ function Register(props) {
           <input
             name='password'
             type='password'
-            placeholder='Enter password'
+            placeholder='Your password...'
             maxLength='18'
             minLength='4'
             value={formValues.password}
@@ -114,7 +113,7 @@ function Register(props) {
           />
 
 
-          <p>I accept the Terms of Use & Privacy Policy.</p>
+          <p className='register-text'>I accept the Terms of Use & Privacy Policy.</p>
         </div>
 
         <button disabled={!formValues.role || !formValues.username || !formValues.email || !formValues.checkbox || !formValues.password}

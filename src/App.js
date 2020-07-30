@@ -6,6 +6,7 @@ import Header from './components/Header';
 import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
 import User from "./components/User";
+import Search from "../src/components/Diner/Search"
 
 
 
@@ -27,6 +28,7 @@ function App() {
           </Switch> 
         </div>
       </div>
+      <Search />
     </Router>
   );
 };

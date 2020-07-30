@@ -81,29 +81,35 @@ a {
   flex-direction: row;
 }
 
-.register-form h1, p, .radio, .checkbox, .input {
+.register-form .register-text, .radio, .checkbox, .input {
   background-color: #FA565E;
 }
-input[type=text],[type=email],[type=password] {
-  padding: 1.6%;
+input[type=text],[type=email],[type=password], [name=username] {
+  /* padding: 1.6%;
   border: 2px solid #F6B638;
-  margin: 1%;
+  margin: 1%; */
+  border: 0;
+  padding: 5px 30px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-color: white;
 }
-.input-2 {
-  padding: 1.5%;
-  margin: 1%;
+
+label [for='input'] {
+  margin-top: 5px;
 }
 
 .register-container {
   background-color: #FA565E;
   /* border: 1px solid black; */
-  padding: 5%;
+  padding: 4% 4% 0 4%;
   display: flex;
   flex-direction: column;
   margin: 8% auto 0 auto;
   max-width: 600px;
   width: 100%;
   border-radius: 10px;
+  width: 420px;
 }
 
 
@@ -112,14 +118,16 @@ button:disabled, button[disabled] {
 
 }
 .button {
-  background-color: #FEF6DA;
-  padding: .35em 1.2em;
-  border: .2em solid #F6B638;
-  margin: 1em .3em .3em 0;
-  border-radius: .12em;
+  background-color: white;
+  font-size: .8rem;
+  padding: 7px 9px;
+  border: none;
+  width: 140px;
+  border-radius: 10px;
   box-sizing: border-box;
   text-align: center;
   transition: all 0.2s;
+  box-shadow: 1px 1px 4px grey;
 }
 
 .button:hover {
