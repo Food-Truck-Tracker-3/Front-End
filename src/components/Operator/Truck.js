@@ -2,7 +2,8 @@ import React from 'react'
 import MenuItem from './MenuItem'
 import CommentForm from './CommentForm'
 import styled from 'styled-components'
-import './components.css'
+import '../components.css'
+import EditTruck from "./EditTruck"
 
 
 export default function Truck(props) {
@@ -18,6 +19,7 @@ export default function Truck(props) {
 console.log(details.name)
   return (
     <div className='truck-container'>
+      <EditTruck editTruck={props.editTruck} />
       <div>
       <p>{details.name}</p>
       <p>{details.description}</p>

@@ -1,20 +1,22 @@
 import React from 'react'
 import {connect} from "react-redux";
-import AddTruck from './AddTruck'
+
+import TruckList from '../Operator/TruckList';
 
 
 
-function Operator(props) {
+function Diner(props) {
   
 
  
 
   return (
-    <div>
+    <div className='diner-container'>
       <h1>{props.userInfo.data.username}</h1>
       <p>Your Food Trucks</p>
-      {/* list of owned trucks */}
-      <AddTruck />
+
+      <TruckList />
+      
     </div>
   );
 };
@@ -29,4 +31,4 @@ const mapStateToProps = state => {
 
 export default connect(
 mapStateToProps, {}
-)(Operator);
+)(Diner);
