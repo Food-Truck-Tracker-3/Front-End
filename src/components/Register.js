@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { registerDiner, registerOperator } from "../store/actions";
@@ -52,8 +53,16 @@ function Register(props) {
 
 
 
+=======
+import React from 'react';
+import {Route, Switch, Link } from "react-router-dom";
+import RegisterDiner from "./RegisterDiner";
+import RegisterOperator from "./RegisterOperator";
+>>>>>>> origin/master
 
+const Register = () => {
   return (
+<<<<<<< HEAD
     <div className='login-container'>
       <form className="register-form" onSubmit={handleSubmit}>
         <p className='register-text'>Create your account. It's free and only takes a minute.</p>
@@ -121,18 +130,21 @@ function Register(props) {
       {props.data && <h3>{props.data.message}</h3>}
     </div>
 
+=======
+    <div>
+      <p>Create your account. It's free and only takes a minute.</p>
+      <div className="links">
+      <Link className='link' to="/register/diner">Register Diner</Link>
+      <Link className='link' to="/register/operator">Register Operator</Link>
+      </div>
+      
+      <Switch>
+        <Route path="/register/diner" component={RegisterDiner} />
+        <Route path="/register/operator" component={RegisterOperator} />
+      </Switch>
+    </div>
+>>>>>>> origin/master
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    isLoading: state.isLoading,
-    data: state.data,
-    error: state.error
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  { registerDiner, registerOperator }
-)(Register);
+export default Register;

@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {connect} from "react-redux";
 import AddTruck from './AddTruck'
-import EditTruck from "./EditTruck";
-import Truck from "./Truck";
-import {fetchTrucks, addTruck, editTruck, deleteTruck} from "../../store/actions";
+import TruckList from './TruckList';
+import {fetchTrucks, addTruck} from "../../store/actions";
 
 
 
-function Operator(props) {
+function Operator({user}, props) {
   
 
   useEffect(() => {
@@ -16,12 +15,10 @@ function Operator(props) {
 
   return (
     <div>
-      <h1>{props.data.data.username}</h1>
+      <h1>{user.username}</h1>
       <p>Your Food Trucks</p>
-      {props.data.length > 0 && props.data.map(truck => (
-        <Truck key={truck.name} truck={truck} editTruck={props.editTruck} deleteTruck={props.deleteTruck}/>
-      ))}
-      <AddTruck addTruck={props.addTruck} />
+      {/* <TruckList fetchTrucks={props.fetchTrucks}/>
+      <AddTruck addTruck={props.addTruck} /> */}
       
     </div>
   );
@@ -36,5 +33,6 @@ const mapStateToProps = state => {
 };
 
 export default connect(
-mapStateToProps, {fetchTrucks, addTruck, editTruck, deleteTruck}
+mapStateToProps, {fetchTrucks, addTruck}
 )(Operator);
+

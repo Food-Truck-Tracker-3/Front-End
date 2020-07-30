@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from "react";
-import {connect} from "react-redux";
-import {login} from "../store/actions";
+import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 import './components.css'
 
 const initialValues = {
@@ -9,21 +8,22 @@ const initialValues = {
     password: ""
 };
 
-const Login = props => {
-  const {push} = useHistory();
+const Login = ({setUserData}) => {
+    const {push} = useHistory();
 
     const [values, setValues] = useState(initialValues);
 
     const handleSubmit = e => {
         e.preventDefault();
-        props.login(values).then(res => {
-          push(`/`);
-        });
-        
+        axiosWithAuth()
+          .post("api/auth/login", values)
+          .then(res => {
+            localStorage.setItem("token", res.data.token);
+            setUserData(res.data.data);
+            push(`/user/${res.data.data.id}`);
+          })
+          .catch(err => console.log(err));
     };
-
-    
-
 
     const handleChanges = e => {
       setValues({...values,
@@ -32,6 +32,7 @@ const Login = props => {
     };
 
     return (
+      <div>
           <div className='login-container'>
             <form onSubmit={handleSubmit}>
               <input
@@ -53,19 +54,8 @@ const Login = props => {
               <button className="button">Log in</button>
             </form>
           </div>
+      </div>
     );
-    
 };
 
-const mapStateToProps = state => {
-    return {
-        isLoading: state.isLoading,
-        data: state.data,
-        error: state.error
-    };
-};
-
-export default connect(
-    mapStateToProps,
-    {login}
-)(Login);
+export default Login;

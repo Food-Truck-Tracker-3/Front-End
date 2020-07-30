@@ -1,5 +1,4 @@
-import {LOGIN, REGISTER_DINER, REGISTER_OPERATOR, REGISTER_START, LOGIN_START, FETCH_TRUCKS_START, FETCH_TRUCKS_SUCCESS, ADD_TRUCK, DELETE_TRUCK, EDIT_TRUCK} from "../actions";
-
+import {REGISTER_DINER, REGISTER_OPERATOR, REGISTER_START, FETCH_TRUCKS_START, FETCH_TRUCKS_SUCCESS, ADD_TRUCK, DELETE_TRUCK, EDIT_TRUCK} from "../actions";
 
 const initialState = {
     isLoading: false,
@@ -7,25 +6,8 @@ const initialState = {
     error: ""
 };
 
-
-
-
 export const reducer = (state = initialState, action) => {
     switch(action.type){
-        case LOGIN_START:
-            return{
-                ...state,
-                isLoading: true
-            };
-            
-        case LOGIN:
-            return{
-                ...state,
-                isLoading: false,
-                data: action.payload,
-                error: ""
-            };
-        
         case REGISTER_START: 
             return{
                 ...state,
@@ -78,8 +60,6 @@ export const reducer = (state = initialState, action) => {
                 data: action.payload
             }
         
-        
-            
         default: 
             return state;
     };
