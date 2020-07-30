@@ -31,20 +31,16 @@ function App() {
           </div>
         
           <Switch>
-            <PrivateRoute
-              exact
-              path="/user/:id"
-            >
+            <PrivateRoute exact path="/user/:id">
               <User user={userData}/>
             </PrivateRoute>
                
-
             <Route 
               path="/login" 
               render={props => <Login {...props} setUserData={setUserData}/>}
             />
+
             <Route path="/register" component={Register} />
-      
           </Switch> 
         </div>
       </div>
