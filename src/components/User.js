@@ -1,32 +1,17 @@
-import React, { useEffect } from 'react';
-import {connect} from "react-redux";
-import AddTruck from './Operator/AddTruck';
-import TruckList from "./Operator/TruckList";
-import {fetchTrucks, addTruck} from "../store/actions";
+import React from 'react';
+import Operator from './Operator/Operator';
+import Diner from './Diner/Diner';
 
-
-
-function User(props) {
-  
-
-  return (
-    <div>
-      <h1>{props.data.username}</h1>
-      <p>Your Food Trucks</p>
-      <TruckList fetchTrucks={props.fetchTrucks}/>
-      <AddTruck addTruck={props.addTruck} />
-    </div>
-  );
-};
-
-const mapStateToProps = state => {
-  return {
-    isLoading: state.isLoading,
-    data: state.data,
-    error: state.error
+function User({user}) {
+  if(user.role === "diner"){
+    return(
+      <Diner user={user}/>
+    );
+  } else{
+    return(
+      <Operator user={user}/>
+    );
   };
 };
 
-export default connect(
-mapStateToProps, {fetchTrucks, addTruck}
-)(User);
+export default User;

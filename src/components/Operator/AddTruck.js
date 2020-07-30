@@ -34,7 +34,7 @@ const AddTruck = props => {
 
   return (
     <div>
-      <h2>Add New Item</h2>
+      <h2>Add New Truck</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

@@ -1,10 +1,5 @@
-
-
 import {axiosWithAuth} from "../../utils/axiosWithAuth";
 
-
-export const LOGIN = "LOGIN";
-export const LOGIN_START ="LOGIN_START";
 export const REGISTER_DINER = "REGISTER_DINER";
 export const REGISTER_OPERATOR = "REGISTER_OPERATOR";
 export const REGISTER_START = "REGISTER_START";
@@ -63,20 +58,6 @@ export const deleteTruck = truck => {
             .catch(err => console.log(err));
     };
 };
- 
-export const login = user => {
-    return dispatch => {
-        dispatch({type: LOGIN_START});
-
-        return axiosWithAuth()
-            .post("/api/auth/login", user)
-            .then(res => {
-                console.log(res);
-                dispatch({type: LOGIN, payload: res.data});
-            })
-            .catch(err => console.log(err));
-    };
-};
 
 export const registerDiner = diner => {
     return dispatch => {
@@ -87,6 +68,7 @@ export const registerDiner = diner => {
             .then(res => {
                 console.log(res);
                 dispatch({type: REGISTER_DINER, payload: res.data})
+                // localStorage.setItem("token", res.data.token);
             })
             .catch(err => console.log(err));
     };
@@ -101,6 +83,7 @@ export const registerOperator = operator => {
             .then(res => {
                 console.log(res);
                 dispatch({type: REGISTER_OPERATOR, payload: res.data})
+                // localStorage.setItem("token", res.data.token);
             })
             .catch(err => console.log(err));
     };

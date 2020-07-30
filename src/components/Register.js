@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { registerDiner, registerOperator } from "../store/actions";
-import {useHistory} from "react-router-dom";
 import './components.css';
 
 
@@ -14,8 +13,6 @@ const initialValues = {
 };
 
 function Register(props) {
-
-  const {push} = useHistory();
 
   const [formValues, setValues] = useState(initialValues);
 
@@ -49,9 +46,6 @@ function Register(props) {
     setValues(initialValues);
     
   };
-
-
-
 
   return (
     <div className='login-container'>

@@ -1,15 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Header from './components/Header';
+import User from "./components/User";
 import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
-import User from "./components/User";
 
 
 
 function App() {
+
+  const [userData, setUserData] = useState({
+    username: "",
+    role: "",
+    email: "",
+    id: 0
+  });
+
+  
+
   return (
     <Router>
       <div className="App">
@@ -21,9 +31,20 @@ function App() {
           </div>
         
           <Switch>
-            <PrivateRoute exact path="/user/:id" component={User}/>
-            <Route path="/login" component={Login} />
+            <PrivateRoute
+              exact
+              path="/user/:id"
+            >
+              <User user={userData}/>
+            </PrivateRoute>
+               
+
+            <Route 
+              path="/login" 
+              render={props => <Login {...props} setUserData={setUserData}/>}
+            />
             <Route path="/register" component={Register} />
+      
           </Switch> 
         </div>
       </div>
