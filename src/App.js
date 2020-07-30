@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import './App.css';
 import Header from './components/Header'
+import TruckList from './components/TruckList'
 
 
 function App() {
@@ -16,18 +17,18 @@ function App() {
         <Header />
         <div className="register-container">
           <div className='links'>
-          <Link className='link' to="/login">Login</Link>
-          <Link className='link' to="/register">Register</Link>
+            <Link className='link' to="/login">Login</Link>
+            <Link className='link' to="/register">Register</Link>
           </div>
-
+        
           <Switch>
-            <PrivateRoute exact path="/operator/:id" component={Operator} />
+            <PrivateRoute exact path="/operator/:id" component={Operator}/>
             <Route path="/login" component={Login} />
-
-            <PrivateRoute exact path="/diner/:id" component={Diner} />
+       
+            <PrivateRoute exact path="/diner/:id" component={Diner}/>
             <Route path="/register" component={Register} />
-
-          </Switch>
+         
+           </Switch> 
         </div>
       </div>
     </Router>
