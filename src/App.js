@@ -1,13 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import PrivateRoute from "./components/PrivateRoute";
-import Diner from "./components/Diner";
-import Operator from "./components/Operator";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Header from './components/Header';
 import './App.css';
-import Header from './components/Header'
-import TruckList from './components/TruckList'
+
 
 
 function App() {
@@ -22,13 +19,9 @@ function App() {
           </div>
         
           <Switch>
-            <PrivateRoute exact path="/operator/:id" component={Operator}/>
             <Route path="/login" component={Login} />
-       
-            <PrivateRoute exact path="/diner/:id" component={Diner}/>
             <Route path="/register" component={Register} />
-         
-           </Switch> 
+          </Switch> 
         </div>
       </div>
     </Router>

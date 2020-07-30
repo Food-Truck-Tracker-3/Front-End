@@ -1,10 +1,10 @@
-import {LOGIN, REGISTER_DINER, REGISTER_OPERATOR, REGISTER_START, LOGIN_START} from "../actions";
+import {LOGIN, REGISTER_DINER, REGISTER_OPERATOR, REGISTER_START, LOGIN_START, FETCH_TRUCKS_START, FETCH_TRUCKS_SUCCESS, ADD_TRUCK, DELETE_TRUCK, EDIT_TRUCK} from "../actions";
 
 
 const initialState = {
     isLoading: false,
-    userInfo: "",
-    error: "Wrong username or password!"
+    data: "",
+    error: ""
 };
 
 
@@ -22,7 +22,7 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 isLoading: false,
-                userInfo: action.payload,
+                data: action.payload,
                 error: ""
             };
         
@@ -35,16 +35,50 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 isLoading: false,
-                userInfo: action.payload,
+                data: action.payload,
                 error: ""
             };
         case REGISTER_OPERATOR:
             return{
                 ...state,
                 isLoading: false,
-                userInfo: action.payload,
+                data: action.payload,
                 error: ""
             };
+
+        case FETCH_TRUCKS_START:
+            return{
+                ...state,
+                isLoading: true,
+            };
+
+        case FETCH_TRUCKS_SUCCESS:
+            return{
+                ...state,
+                isLoading: false,
+                data: action.payload,
+                error: ""
+            };
+
+        case ADD_TRUCK:
+            return{
+                ...state,
+                data: action.payload,
+            };
+
+        case EDIT_TRUCK:
+            return{
+                ...state,
+                data: action.payload,
+            };
+
+        case DELETE_TRUCK:
+            return{
+                ...state,
+                data: action.payload
+            }
+        
+        
             
         default: 
             return state;

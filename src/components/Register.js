@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { connect } from "react-redux";
 import { registerDiner, registerOperator } from "../store/actions";
-import './components.css'
+import {useHistory} from "react-router-dom";
+import './components.css';
+
 
 const initialValues = {
   role: '',
@@ -12,6 +14,8 @@ const initialValues = {
 };
 
 function Register(props) {
+
+  const {push} = useHistory();
 
   const [formValues, setValues] = useState(initialValues);
 
@@ -38,11 +42,12 @@ function Register(props) {
   const handleSubmit = e => {
     e.preventDefault();
     if (formValues.role === "diner") {
-      props.registerDiner(formValues)
+      props.registerDiner(formValues);
     } else {
-      props.registerOperator(formValues)
-    };
+      props.registerOperator(formValues);
+    }  
     setValues(initialValues);
+    
   };
 
 
@@ -96,7 +101,6 @@ function Register(props) {
             placeholder='Enter password'
             maxLength='18'
             minLength='4'
-
             value={formValues.password}
             onChange={onChange}
           />
@@ -115,10 +119,8 @@ function Register(props) {
 
         <button disabled={!formValues.role || !formValues.username || !formValues.email || !formValues.checkbox || !formValues.password}
           className='register, button'> Register Now</button>
-
-
-        <h3>{props.userInfo.error}</h3>
       </form>
+      {props.data && <h3>{props.data.message}</h3>}
     </div>    
 
   );
@@ -127,7 +129,7 @@ function Register(props) {
 const mapStateToProps = state => {
   return {
     isLoading: state.isLoading,
-    userInfo: state.userInfo,
+    data: state.data,
     error: state.error
   };
 };
