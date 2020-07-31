@@ -49,7 +49,7 @@ function RegisterOperator(props) {
           <input
             name='username'
             type='text'
-            placeholder='Enter Name'
+            placeholder='Your username...'
             maxLength='18'
             minLength='2'
             value={formValues.username}
@@ -62,7 +62,7 @@ function RegisterOperator(props) {
           <input
             name='email'
             type='email'
-            placeholder='Enter Email'
+            placeholder='Your email...'
 
             value={formValues.email}
             onChange={onChange}
@@ -73,7 +73,7 @@ function RegisterOperator(props) {
           <input
             name='password'
             type='password'
-            placeholder='Enter password'
+            placeholder='Your password...'
             maxLength='18'
             minLength='4'
             value={formValues.password}
