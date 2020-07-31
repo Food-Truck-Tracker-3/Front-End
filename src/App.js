@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Header from './components/Header';
-import User from "./components/User";
+import Operator from "./components/Operator/Operator";
 import PrivateRoute from "./components/PrivateRoute";
 import './App.css';
 import '../src/components/components.css'
@@ -28,7 +28,7 @@ function App() {
         
           <Switch>
             <PrivateRoute exact path="/user/:id">
-              <User user={userData}/>
+              <Operator user={userData}/>
             </PrivateRoute>
                
             <Route 

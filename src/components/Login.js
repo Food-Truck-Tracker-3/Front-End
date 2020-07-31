@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {useHistory} from "react-router-dom";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
 import './components.css'
+import axios from "axios";
 
 const initialValues = {
     username: "",
@@ -15,8 +15,8 @@ const Login = ({setUserData}) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        axiosWithAuth()
-          .post("api/auth/login", values)
+        axios
+          .post("https://foodtruck-backend-3.herokuapp.com/api/auth/login", values)
           .then(res => {
             localStorage.setItem("token", res.data.token);
             setUserData(res.data.data);
