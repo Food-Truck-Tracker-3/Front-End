@@ -1,4 +1,4 @@
-import {REGISTER_DINER, REGISTER_OPERATOR, REGISTER_START, FETCH_TRUCKS_START, FETCH_TRUCKS_SUCCESS, ADD_TRUCK, DELETE_TRUCK, EDIT_TRUCK} from "../actions";
+import {REGISTER_DINER, REGISTER_OPERATOR, REGISTER_START, FETCH_TRUCK_START, FETCH_TRUCK_SUCCESS, FETCH_OPERATOR_TRUCKS_START, FETCH_OPERATOR_TRUCKS_SUCCESS} from "../actions";
 
 const initialState = {
     isLoading: false,
@@ -28,13 +28,13 @@ export const reducer = (state = initialState, action) => {
                 error: ""
             };
 
-        case FETCH_TRUCKS_START:
+        case FETCH_TRUCK_START:
             return{
                 ...state,
                 isLoading: true,
             };
-
-        case FETCH_TRUCKS_SUCCESS:
+    
+        case FETCH_TRUCK_SUCCESS:
             return{
                 ...state,
                 isLoading: false,
@@ -42,24 +42,20 @@ export const reducer = (state = initialState, action) => {
                 error: ""
             };
 
-        case ADD_TRUCK:
+        case FETCH_OPERATOR_TRUCKS_START:
             return{
                 ...state,
-                data: action.payload,
+                isLoading: true,
             };
-
-        case EDIT_TRUCK:
-            return{
-                ...state,
-                data: action.payload,
-            };
-
-        case DELETE_TRUCK:
-            return{
-                ...state,
-                data: action.payload
-            }
         
+        case FETCH_OPERATOR_TRUCKS_SUCCESS:
+            return{
+                ...state,
+                isLoading: false,
+                data: action.payload,
+                error: ""
+            };
+
         default: 
             return state;
     };
