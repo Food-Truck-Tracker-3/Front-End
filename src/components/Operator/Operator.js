@@ -13,7 +13,6 @@ function Operator(props) {
     axiosWithAuth()
             .get("/api/operators/trucks")
             .then(res => {
-                console.log(res);
                 setTruckList(res.data);
             })
             .catch(err => console.log(err));

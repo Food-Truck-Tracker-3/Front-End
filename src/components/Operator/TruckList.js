@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import {useHistory} from "react-router-dom";
 import { axiosWithAuth } from "../../utils/axiosWithAuth";
 
 const initialTruck = {
@@ -16,8 +15,6 @@ const TruckList = props => {
   
   const [editing, setEditing] = useState(false);
   const [truckToEdit, setTruckToEdit] = useState(initialTruck);
-  const {push} = useHistory();
-
 
   const editTruck = truck => {
     setEditing(true);
@@ -30,7 +27,6 @@ const TruckList = props => {
     axiosWithAuth()
       .put(`https://foodtruck-backend-3.herokuapp.com/api/operators/trucks/${truckToEdit.id}`, truckToEdit)
       .then(res => {
-        console.log(res);
         setEditing(false);
         setTruckToEdit(initialTruck);
       })
@@ -42,9 +38,6 @@ const TruckList = props => {
     axiosWithAuth()
       .delete(`https://foodtruck-backend-3.herokuapp.com/api/operators/trucks/${truck.id}`)
       .then(res => {
-        console.log(res);
-        // props.setTruckList(res.data);
-        // push(`/user/${props.userId}`);
         setEditing(false);
         setTruckToEdit(initialTruck);
       })
@@ -59,8 +52,6 @@ const TruckList = props => {
     axiosWithAuth()
          .post(`https://foodtruck-backend-3.herokuapp.com/api/operators/trucks`, truckToEdit)
          .then(res => {
-             console.log(res);
-            //  push(`/user/${props.userId}`);
              setTruckToEdit(initialTruck);
          })
          .catch(err => console.log(err));
@@ -79,7 +70,7 @@ const TruckList = props => {
           <p>Cuisine: {truck.cuisine}</p>
           <p>Description: {truck.description}</p>
           <p>Location: {truck.current_location}, {truck.city}</p>
-          <p>{truck.hours}</p>
+          <p>Hours: {truck.hours}</p>
           <button 
             onClick={() => editTruck(truck)}
           >
