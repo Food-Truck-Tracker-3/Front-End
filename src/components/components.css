@@ -131,7 +131,7 @@ label [for='input'] {
 .register-container {
   background-color: #FA565E;
   /* border: 1px solid black; */
-  padding: 1.5% 4% 0 4%;
+  padding: 1.5% 4% 1.3% 4%;
   display: flex;
   flex-direction: column;
   margin: 8% auto 0 auto;
